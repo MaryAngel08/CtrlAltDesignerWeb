@@ -1187,24 +1187,7 @@ h1, h2,
 
 #contact {
   overflow: visible;
-  padding-bottom: 72px;
-}
-
-#contact::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 120px;
-  z-index: -1;
-  pointer-events: none;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgb(10 9 22 / 0.18) 40%,
-    rgb(10 9 22 / 0.55) 100%
-  );
+  padding-bottom: 48px;
 }
 
 #contact .wrap {
@@ -1684,7 +1667,15 @@ h1, h2,
 }
 
 .site-footer::before {
-  content: none;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  z-index: 2;
+  pointer-events: none;
+  background: rgb(196 181 253 / 0.22);
 }
 
 .footer-bar,
