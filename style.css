@@ -1187,7 +1187,24 @@ h1, h2,
 
 #contact {
   overflow: visible;
-  padding-bottom: 48px;
+  padding-bottom: 72px;
+}
+
+#contact::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120px;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgb(10 9 22 / 0.18) 40%,
+    rgb(10 9 22 / 0.55) 100%
+  );
 }
 
 #contact .wrap {
@@ -1656,45 +1673,41 @@ h1, h2,
   isolation: isolate;
   overflow: hidden;
   z-index: 1;
-  padding: 48px 0 48px;
+  padding: 0;
   border: none;
   border-top: none;
   box-shadow: none;
-  background: #0a0916;
+  background: transparent;
   color: var(--text-muted);
   font-size: 0.82rem;
   font-weight: 400;
 }
 
 .site-footer::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 1px;
-  z-index: 0;
-  pointer-events: none;
-  background: rgb(0 0 0 / 0.55);
+  content: none;
 }
 
-.site-footer::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
+.footer-bar,
+.footer-copy-bar {
+  position: relative;
+  z-index: 1;
   background-image: radial-gradient(
     circle at 1px 1px,
-    rgb(196 181 253 / 0.05) 1px,
+    rgb(196 181 253 / 0.08) 1px,
     transparent 1.2px
   );
   background-size: 28px 28px;
 }
 
-.site-footer > * {
-  position: relative;
-  z-index: 1;
+.footer-bar {
+  padding: 28px 0 22px;
+  background-color: rgb(255 255 255 / 0.035);
+}
+
+.footer-copy-bar {
+  padding: 18px var(--hero-pad-x) 22px;
+  background-color: rgb(8 7 18 / 0.28);
+  border-top: 1px solid rgb(196 181 253 / 0.22);
 }
 
 .footer-top {
@@ -1702,7 +1715,7 @@ h1, h2,
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 16px 24px;
-  margin-bottom: 32px;
+  margin-bottom: 0;
 }
 
 .footer-brand {
@@ -1746,7 +1759,14 @@ h1, h2,
 }
 
 .footer-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   justify-self: end;
+}
+
+.footer-email svg {
+  flex-shrink: 0;
 }
 
 .footer-nav a:hover,
@@ -1758,24 +1778,11 @@ h1, h2,
   color: var(--lavender);
 }
 
-.footer-copy {
-  margin: 0;
-  padding-top: 22px;
-  border-top: none;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgb(255 255 255 / 0.1) 50%,
-    transparent 100%
-  ) top center / min(640px, 55%) 1px no-repeat;
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: var(--text-muted);
-  opacity: 0.75;
-}
-
 .footer-kicker {
-  margin: 0 0 18px;
+  position: relative;
+  z-index: 1;
+  margin: 18px 0 0;
+  padding: 0 var(--hero-pad-x);
   text-align: center;
   font-size: 0.95rem;
   font-weight: 400;
@@ -1783,6 +1790,15 @@ h1, h2,
   letter-spacing: -0.02em;
   color: var(--lavender);
   opacity: 0.85;
+}
+
+.footer-copy {
+  margin: 0;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  opacity: 0.75;
 }
 
 /* ---------- Motion ---------- */
@@ -2037,7 +2053,7 @@ h1, h2,
     grid-template-columns: 1fr;
     justify-items: start;
     gap: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
   }
 
   .footer-brand,
