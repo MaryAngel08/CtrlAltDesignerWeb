@@ -15,6 +15,21 @@ if (heroPortrait && heroPortrait.tagName === "VIDEO") {
   }
 }
 
+const revealItems = document.querySelectorAll(".reveal");
+if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  revealItems.forEach((item) => item.classList.add("in-view"));
+} else {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  revealItems.forEach((item) => io.observe(item));
+}
+
 const touchForm = document.getElementById("touch-form");
 if (touchForm) {
   touchForm.addEventListener("submit", (event) => {

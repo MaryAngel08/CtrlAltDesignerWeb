@@ -21,6 +21,8 @@
   --suit-panel: #E8E8E8;
   --hero-pad-x: clamp(24px, 5.5vw, 80px);
   --hero-word-pad-x: max(12px, 1.2vw);
+  --color-text-heading: var(--text-primary);
+  --color-text-dim: #3a3a3a;
 }
 
 html {
@@ -240,6 +242,24 @@ h1, h2,
   --hero-line: calc(var(--hero-word-size) * 1.02);
   --type-rise-duration: 0.8s;
   --marquee-duration: 36s;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 180px;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgb(10 9 22 / 0.18) 32%,
+    rgb(10 9 22 / 0.62) 68%,
+    #0a0916 100%
+  );
 }
 
 .hero-stage {
@@ -692,6 +712,48 @@ h1, h2,
   background: #c4b5fd;
 }
 
+.marquee {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  width: 100%;
+  padding: 30px 0;
+  background: none;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee-scroll 20s linear infinite;
+}
+
+.marquee-track .item {
+  font-family: Inter, sans-serif;
+  font-weight: 800;
+  font-size: clamp(22px, 3vw, 38px);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--text-primary);
+  padding: 0 20px;
+}
+
+.marquee-track .sep {
+  font-family: Inter, sans-serif;
+  font-weight: 800;
+  font-size: clamp(18px, 2vw, 28px);
+  line-height: 1;
+  color: #8B5CF6;
+  padding: 0 10px;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
 .hero-continue > .band {
   position: relative;
   z-index: 1;
@@ -903,6 +965,12 @@ h1, h2,
   width: 12px;
   height: 12px;
   flex-shrink: 0;
+}
+
+.project-live {
+  color: var(--lavender-light);
+  border-color: rgb(196 181 253 / 0.55);
+  background: rgb(139 92 246 / 0.18);
 }
 
 .service-row {
@@ -1359,6 +1427,10 @@ h1, h2,
   flex-shrink: 0;
 }
 
+#work a[href*="blake-salon"] .work-glow-thumb {
+  object-position: 8% 6%;
+}
+
 #work .process-card h3 {
   font-size: 1rem;
 }
@@ -1500,6 +1572,10 @@ h1, h2,
 
 #contact .touch-heading {
   margin: 0 0 18px;
+}
+
+#contact .touch-heading .services-heading {
+  margin: 0;
   font-size: clamp(2.15rem, 4.4vw, 3.5rem);
   line-height: 1;
 }
@@ -1792,6 +1868,58 @@ h1, h2,
   opacity: 0.75;
 }
 
+.reveal .label {
+  margin: 0 0 12px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lavender);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal .services-heading-line,
+.reveal .section-title {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-text-heading) 50%,
+    var(--color-text-dim) 50%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: background-position 1.1s ease;
+}
+
+.reveal .heading-pill {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.7s ease 0.12s, transform 0.7s ease 0.12s;
+}
+
+.reveal p:not(.label) {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+
+.reveal.in-view .label,
+.reveal.in-view .heading-pill,
+.reveal.in-view p:not(.label) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal.in-view .services-heading-line,
+.reveal.in-view .section-title {
+  background-position: 0 0;
+}
+
 /* ---------- Motion ---------- */
 @keyframes fadeSlideDown {
   from { opacity: 0; transform: translateY(-14px); }
@@ -1841,7 +1969,8 @@ h1, h2,
     transform: none !important;
     box-shadow: none !important;
   }
-  .hero-marquee-track {
+  .hero-marquee-track,
+  .marquee-track {
     animation: none !important;
     transform: none !important;
   }
@@ -1859,6 +1988,19 @@ h1, h2,
     background-image: none;
   }
   html { scroll-behavior: auto; }
+  .reveal .label,
+  .reveal .heading-pill,
+  .reveal p:not(.label) {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .reveal .services-heading-line,
+  .reveal .section-title {
+    background-image: none;
+    color: var(--color-text-heading);
+    transition: none !important;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -2180,6 +2322,10 @@ h1, h2,
     display: flex;
     flex-direction: column;
     padding-top: var(--header-h);
+  }
+
+  .hero::after {
+    height: 120px;
   }
 
   .hero-stage {
