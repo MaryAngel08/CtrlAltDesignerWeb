@@ -2,7 +2,7 @@
   --bg-primary: #0A0E1A;
   --bg-secondary: #12162A;
   --header-bg: rgba(15, 17, 32, 0.5);
-  --header-h: 72px;
+  --header-h: 76px;
   --text-primary: #FFFFFF;
   --text-secondary: #B8BCC8;
   --text-muted: #9CA3AF;
@@ -71,7 +71,7 @@ h1, h2,
   min-height: var(--header-h);
   display: flex;
   align-items: center;
-  padding: 20px var(--hero-pad-x);
+  padding: 16px var(--hero-pad-x);
   background: var(--header-bg);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: var(--header-blur);
@@ -99,7 +99,7 @@ h1, h2,
 }
 
 .logo-mark {
-  height: 28px;
+  height: 30px;
   width: auto;
   flex-shrink: 0;
   display: block;
@@ -107,7 +107,7 @@ h1, h2,
 }
 
 .logo-word {
-  font-size: 0.92rem;
+  font-size: 1.05rem;
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1;
@@ -130,7 +130,7 @@ h1, h2,
   position: relative;
   color: var(--text-primary);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: -0.1px;
   line-height: 1.5;
@@ -194,7 +194,7 @@ h1, h2,
   transition: transform 0.2s ease;
 }
 
-.nav-cta {
+.main-nav .nav-cta {
   display: none;
 }
 
@@ -202,14 +202,14 @@ h1, h2,
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 14px;
+  padding: 7px 16px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 999px;
   background: var(--cta-bg);
   color: var(--cta-text);
   text-decoration: none;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: -0.1px;
   line-height: 1.5;
@@ -421,7 +421,7 @@ h1, h2,
 
 .hero-tags li {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: -0.1px;
   line-height: 1.5;
@@ -432,7 +432,7 @@ h1, h2,
 .hero-blurb {
   margin: 0;
   max-width: 28ch;
-  font-size: 23px;
+  font-size: clamp(1.15rem, 1.3vw + 0.85rem, 1.6rem);
   font-weight: 400;
   line-height: 1.4;
   letter-spacing: -0.01em;
@@ -452,7 +452,7 @@ h1, h2,
 .hero-heading {
   margin: 0;
   max-width: 11ch;
-  font-size: clamp(2.25rem, 4.2vw, 3.75rem);
+  font-size: clamp(2.6rem, 5vw, 4.25rem);
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -561,13 +561,13 @@ h1, h2,
 
 .contact-name {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 1rem;
   line-height: 1.3;
 }
 
 .contact-role {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 400;
   color: var(--text-secondary);
   line-height: 1.4;
@@ -584,7 +584,7 @@ h1, h2,
   background: var(--cta-bg);
   color: var(--cta-text);
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 800;
   box-sizing: border-box;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -717,6 +717,15 @@ h1, h2,
   background: #c4b5fd;
 }
 
+.hero-continue-glow--contact {
+  bottom: 0;
+  left: 18%;
+  width: min(860px, 95vw);
+  height: min(560px, 70vw);
+  background: #8b5cf6;
+  opacity: 0.28;
+}
+
 .marquee {
   position: relative;
   z-index: 1;
@@ -738,7 +747,7 @@ h1, h2,
 .marquee-track .item {
   font-family: Inter, sans-serif;
   font-weight: 800;
-  font-size: clamp(22px, 3vw, 38px);
+  font-size: clamp(26px, 3.4vw, 42px);
   letter-spacing: -0.04em;
   line-height: 1;
   color: var(--text-primary);
@@ -748,7 +757,7 @@ h1, h2,
 .marquee-track .sep {
   font-family: Inter, sans-serif;
   font-weight: 800;
-  font-size: clamp(18px, 2vw, 28px);
+  font-size: clamp(20px, 2.3vw, 32px);
   line-height: 1;
   color: #8B5CF6;
   padding: 0 10px;
@@ -793,7 +802,7 @@ h1, h2,
 
 .section-title {
   margin: 0 0 10px;
-  font-size: clamp(2rem, 4.6vw, 3.35rem);
+  font-size: clamp(2.35rem, 5vw, 3.75rem);
   letter-spacing: -0.045em;
   line-height: 1.05;
   color: var(--text-primary);
@@ -802,7 +811,7 @@ h1, h2,
 .section-lead {
   margin: 0;
   color: var(--text-secondary);
-  font-size: 1.05rem;
+  font-size: clamp(1.12rem, 0.5vw + 1.02rem, 1.28rem);
   font-weight: 400;
 }
 
@@ -927,20 +936,20 @@ h1, h2,
 
 .project-card h3 {
   margin: 0 0 4px;
-  font-size: 1.08rem;
+  font-size: 1.22rem;
   letter-spacing: -0.03em;
 }
 
 .project-sub {
   margin: 0 0 6px;
-  font-size: 0.88rem;
+  font-size: 1rem;
   font-weight: 400;
   color: var(--text-secondary);
 }
 
 .project-cat {
   display: block;
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   font-weight: 400;
   color: var(--text-muted);
 }
@@ -955,7 +964,7 @@ h1, h2,
   margin-top: 10px;
   padding: 6px 12px;
   border-radius: 999px;
-  font-size: 0.62rem;
+  font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1130,7 +1139,7 @@ h1, h2,
   align-items: center;
   gap: 0.18em;
   margin: 0 0 18px;
-  font-size: clamp(2.15rem, 5.2vw, 4rem);
+  font-size: clamp(2.5rem, 5.6vw, 4.5rem);
   letter-spacing: -0.05em;
   line-height: 1.05;
   color: var(--text-primary);
@@ -1166,7 +1175,7 @@ h1, h2,
 .services-sub {
   margin: 0;
   color: var(--text-muted);
-  font-size: 1.05rem;
+  font-size: clamp(1.12rem, 0.5vw + 1.02rem, 1.28rem);
   font-weight: 400;
   line-height: 1.5;
 }
@@ -1185,7 +1194,7 @@ h1, h2,
   background: #8B5CF6;
   color: #fff;
   text-decoration: none;
-  font-size: 1.05rem;
+  font-size: clamp(1.08rem, 0.4vw + 1rem, 1.2rem);
   font-weight: 600;
   letter-spacing: -0.02em;
   box-shadow: 0 0 28px rgb(139 92 246 / 0.45);
@@ -1221,14 +1230,14 @@ h1, h2,
 
 .service-block h3 {
   margin: 0 0 8px;
-  font-size: 1.12rem;
+  font-size: clamp(1.18rem, 0.45vw + 1.08rem, 1.35rem);
   letter-spacing: -0.03em;
 }
 
 .service-block p {
   margin: 0;
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: clamp(1.05rem, 0.35vw + 0.95rem, 1.15rem);
   line-height: 1.55;
 }
 
@@ -1249,13 +1258,13 @@ h1, h2,
 
 #about .services-heading {
   margin: 0 0 16px;
-  font-size: clamp(2.25rem, 4.2vw, 3.5rem);
+  font-size: clamp(2.5rem, 5vw, 3.85rem);
 }
 
 #work .work-head .services-heading {
   justify-content: center;
   margin: 0 0 14px;
-  font-size: clamp(2.1rem, 4.4vw, 3.35rem);
+  font-size: clamp(2.4rem, 5vw, 3.75rem);
 }
 
 #contact {
@@ -1275,7 +1284,7 @@ h1, h2,
 .about-bio p {
   margin: 0 0 1.05em;
   color: var(--text-primary);
-  font-size: 1.12rem;
+  font-size: clamp(1.15rem, 0.55vw + 1.05rem, 1.35rem);
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: -0.01em;
@@ -1437,11 +1446,11 @@ h1, h2,
 }
 
 #work .process-card h3 {
-  font-size: 1rem;
+  font-size: clamp(1.08rem, 0.35vw + 1rem, 1.22rem);
 }
 
 #work .process-card p {
-  font-size: 0.88rem;
+  font-size: clamp(0.98rem, 0.3vw + 0.9rem, 1.08rem);
 }
 
 .about-teaser {
@@ -1475,7 +1484,7 @@ h1, h2,
 .about-copy p {
   margin: 0 0 14px;
   color: var(--text-secondary);
-  font-size: 1.05rem;
+  font-size: clamp(1.12rem, 0.45vw + 1.02rem, 1.25rem);
   line-height: 1.65;
 }
 
@@ -1581,14 +1590,14 @@ h1, h2,
 
 #contact .touch-heading .services-heading {
   margin: 0;
-  font-size: clamp(2.15rem, 4.4vw, 3.5rem);
+  font-size: clamp(2.5rem, 5vw, 3.85rem);
   line-height: 1;
 }
 
 .touch-kicker {
   margin: 0 0 12px;
   color: var(--lavender);
-  font-size: 1.15rem;
+  font-size: clamp(1.15rem, 0.5vw + 1.05rem, 1.35rem);
   font-weight: 500;
   font-style: italic;
 }
@@ -1596,7 +1605,7 @@ h1, h2,
 .touch-lead {
   margin: 0 0 28px;
   color: var(--text-secondary);
-  font-size: 1.02rem;
+  font-size: clamp(1.12rem, 0.45vw + 1.02rem, 1.22rem);
   line-height: 1.6;
 }
 
@@ -1605,7 +1614,7 @@ h1, h2,
   align-items: center;
   gap: 10px;
   color: var(--text-primary);
-  font-size: 0.98rem;
+  font-size: clamp(1.05rem, 0.35vw + 0.98rem, 1.15rem);
   font-weight: 500;
   letter-spacing: -0.02em;
   text-decoration: none;
@@ -1665,7 +1674,7 @@ h1, h2,
 
 .touch-field span {
   color: var(--text-secondary);
-  font-size: 0.88rem;
+  font-size: 1rem;
 }
 
 .touch-field input,
@@ -1677,7 +1686,7 @@ h1, h2,
   background: rgb(16 18 36 / 0.55);
   color: var(--text-primary);
   font: inherit;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   outline: none;
   box-shadow: 0 0 18px rgb(139 92 246 / 0.12);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -1702,7 +1711,7 @@ h1, h2,
   background: #8b5cf6;
   color: #fff;
   font: inherit;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
   box-shadow:
@@ -1741,7 +1750,12 @@ h1, h2,
   border: none;
   border-top: none;
   box-shadow: none;
-  background: transparent;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgb(5 4 12 / 0.28) 42%,
+    #05040c 100%
+  );
   color: var(--text-muted);
   font-size: 0.82rem;
   font-weight: 400;
@@ -1756,7 +1770,7 @@ h1, h2,
   height: 1px;
   z-index: 2;
   pointer-events: none;
-  background: rgb(196 181 253 / 0.22);
+  background: rgb(196 181 253 / 0.16);
 }
 
 .footer-bar,
@@ -1765,7 +1779,7 @@ h1, h2,
   z-index: 1;
   background-image: radial-gradient(
     circle at 1px 1px,
-    rgb(196 181 253 / 0.08) 1px,
+    rgb(196 181 253 / 0.05) 1px,
     transparent 1.2px
   );
   background-size: 28px 28px;
@@ -1773,13 +1787,13 @@ h1, h2,
 
 .footer-bar {
   padding: 28px 0 22px;
-  background-color: rgb(255 255 255 / 0.035);
+  background-color: transparent;
 }
 
 .footer-copy-bar {
   padding: 18px var(--hero-pad-x) 22px;
-  background-color: rgb(8 7 18 / 0.28);
-  border-top: 1px solid rgb(196 181 253 / 0.22);
+  background-color: rgb(3 2 10 / 0.55);
+  border-top: 1px solid rgb(196 181 253 / 0.14);
 }
 
 .footer-top {
@@ -1795,22 +1809,15 @@ h1, h2,
   align-items: center;
   gap: 10px;
   justify-self: start;
-  color: var(--text-muted);
+  color: var(--text-primary);
   text-decoration: none;
   min-width: 0;
 }
 
 .footer-brand .logo-mark {
-  height: 22px;
-  filter: drop-shadow(none);
-  opacity: 0.85;
-}
-
-.footer-brand span {
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  white-space: nowrap;
+  height: 24px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+  opacity: 1;
 }
 
 .footer-nav {
@@ -1824,7 +1831,7 @@ h1, h2,
 .footer-email {
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: -0.01em;
   transition: color 0.2s ease;
@@ -1839,15 +1846,19 @@ h1, h2,
 
 .footer-email svg {
   flex-shrink: 0;
+  color: #8B5CF6;
 }
 
 .footer-nav a:hover,
 .footer-nav a:focus-visible,
 .footer-email:hover,
-.footer-email:focus-visible,
-.footer-brand:hover,
-.footer-brand:focus-visible {
+.footer-email:focus-visible {
   color: var(--lavender);
+}
+
+.footer-email:hover svg,
+.footer-email:focus-visible svg {
+  color: #9D72F7;
 }
 
 .footer-kicker {
@@ -1856,7 +1867,7 @@ h1, h2,
   margin: 18px 0 0;
   padding: 0 var(--hero-pad-x);
   text-align: center;
-  font-size: 0.95rem;
+  font-size: clamp(1rem, 0.35vw + 0.92rem, 1.12rem);
   font-weight: 400;
   font-style: italic;
   letter-spacing: -0.02em;
@@ -1867,7 +1878,7 @@ h1, h2,
 .footer-copy {
   margin: 0;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.88rem;
   font-weight: 400;
   color: var(--text-muted);
   opacity: 0.75;
@@ -1875,7 +1886,7 @@ h1, h2,
 
 .reveal .label {
   margin: 0 0 12px;
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -2072,7 +2083,6 @@ h1, h2,
   .nav-toggle:checked ~ .site-header .nav-burger span:last-child {
     transform: translateY(-4px) rotate(-45deg);
   }
-  .logo-word { font-size: 0.82rem; }
   .main-nav {
     display: none;
     position: absolute;
@@ -2094,7 +2104,6 @@ h1, h2,
   }
   .main-nav a {
     padding: 12px 14px;
-    font-size: 1rem;
   }
   .main-nav a::after {
     display: none;
@@ -2183,11 +2192,7 @@ h1, h2,
 
   #about .services-heading,
   #work .work-head .services-heading {
-    font-size: clamp(2.25rem, 8vw, 3rem);
-  }
-
-  .about-bio p {
-    font-size: 1.05rem;
+    font-size: clamp(2.5rem, 9vw, 3.35rem);
   }
 
   .band {
@@ -2221,9 +2226,14 @@ h1, h2,
     align-self: stretch;
   }
 
+  .footer-bar {
+    padding: 32px 0 24px;
+  }
+
   .footer-top {
     grid-template-columns: 1fr;
-    justify-items: start;
+    justify-items: center;
+    text-align: center;
     gap: 18px;
     margin-bottom: 0;
   }
@@ -2231,12 +2241,27 @@ h1, h2,
   .footer-brand,
   .footer-nav,
   .footer-email {
-    justify-self: start;
+    justify-self: center;
   }
 
   .footer-nav {
     flex-wrap: wrap;
-    gap: 12px 18px;
+    justify-content: center;
+    gap: 12px 20px;
+  }
+
+  .footer-email {
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+
+  .footer-email svg {
+    color: #8B5CF6;
+  }
+
+  .footer-kicker {
+    margin-top: 20px;
   }
 }
 
@@ -2291,7 +2316,7 @@ h1, h2,
 
   .hero .contact-name,
   .hero .contact-role {
-    font-size: 0.82rem;
+    font-size: 0.95rem;
   }
 
   .hero .contact-role {
@@ -2302,7 +2327,7 @@ h1, h2,
 
   .hero .book-button {
     padding: 10px 16px;
-    font-size: 0.82rem;
+    font-size: 0.95rem;
     gap: 8px;
   }
 
@@ -2323,7 +2348,6 @@ h1, h2,
   }
 
   .hero-blurb {
-    font-size: 15px;
     line-height: 1.35;
     max-width: 22ch;
     text-align: right;
@@ -2424,7 +2448,7 @@ h1, h2,
   .hero-heading {
     order: 1;
     max-width: none;
-    font-size: clamp(2.5rem, 11vw, 3rem);
+    font-size: clamp(2.75rem, 12vw, 3.4rem);
     font-weight: 400;
     line-height: 1.18;
     letter-spacing: -0.03em;
@@ -2434,7 +2458,6 @@ h1, h2,
     order: 2;
     margin: 0;
     max-width: none;
-    font-size: 1.05rem;
     line-height: 1.5;
     text-align: left;
     color: var(--text-secondary);
@@ -2463,5 +2486,14 @@ h1, h2,
   #work .process-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .footer-nav a,
+  .footer-email {
+    font-size: 0.95rem;
+  }
+
+  .footer-copy {
+    font-size: 0.82rem;
   }
 }
