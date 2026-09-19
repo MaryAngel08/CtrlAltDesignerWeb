@@ -16,8 +16,11 @@ if (heroPortrait && heroPortrait.tagName === "VIDEO") {
 }
 
 const revealItems = document.querySelectorAll(".reveal");
-if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+const touchFigure = document.querySelector(".touch-figure");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (prefersReducedMotion) {
   revealItems.forEach((item) => item.classList.add("in-view"));
+  if (touchFigure) touchFigure.classList.add("in-view");
 } else {
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -28,6 +31,19 @@ if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     });
   }, { threshold: 0.3 });
   revealItems.forEach((item) => io.observe(item));
+
+  if (touchFigure) {
+    const contactSection = document.getElementById("contact") || touchFigure;
+    const cursorIo = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          touchFigure.classList.add("in-view");
+          cursorIo.disconnect();
+        }
+      });
+    }, { threshold: 0.18 });
+    cursorIo.observe(contactSection);
+  }
 }
 
 const touchForm = document.getElementById("touch-form");
