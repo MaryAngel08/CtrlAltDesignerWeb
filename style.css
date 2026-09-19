@@ -1868,8 +1868,8 @@ h1, h2,
 .footer-kicker {
   position: relative;
   z-index: 1;
-  margin: 18px 0 0;
-  padding: 0 var(--hero-pad-x);
+  margin: 0;
+  padding: 0;
   text-align: center;
   font-size: clamp(1rem, 0.35vw + 0.92rem, 1.12rem);
   font-weight: 400;
@@ -2123,10 +2123,6 @@ h1, h2,
 
   .hero { --hero-word-size: 11vw; }
 
-  .hero-tags {
-    display: none;
-  }
-
   .project-grid,
   .about-teaser {
     grid-template-columns: 1fr;
@@ -2231,7 +2227,7 @@ h1, h2,
   }
 
   .footer-bar {
-    padding: 32px 0 24px;
+    padding: 32px 0;
   }
 
   .footer-top {
@@ -2265,7 +2261,13 @@ h1, h2,
   }
 
   .footer-kicker {
-    margin-top: 20px;
+    margin-top: 0;
+  }
+
+  .footer-cta-group {
+    margin-top: 28px;
+    padding-bottom: 0;
+    gap: 16px;
   }
 }
 
@@ -2274,8 +2276,10 @@ h1, h2,
     display: none;
   }
 
-  .hero-tags {
-    display: none;
+  .footer-cta-group {
+    margin-top: 28px;
+    padding-bottom: 0;
+    gap: 16px;
   }
 
   .hero .contact-card {
@@ -2342,12 +2346,16 @@ h1, h2,
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
+  .footer-bar {
+    padding: 28px 0;
+  }
+
   .hero-ui {
     padding: calc(var(--header-h) + 8px) var(--hero-pad-x) 28px;
   }
 
   .hero-ui-top {
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: flex-start;
   }
 
@@ -2458,8 +2466,20 @@ h1, h2,
     letter-spacing: -0.03em;
   }
 
-  .hero-blurb {
+  .hero-tags {
+    display: flex;
     order: 2;
+    align-self: start;
+    padding: 2px 0 2px 12px;
+    gap: 6px;
+  }
+
+  .hero-tags li {
+    font-size: 0.95rem;
+  }
+
+  .hero-blurb {
+    order: 3;
     margin: 0;
     max-width: none;
     line-height: 1.5;
@@ -2468,7 +2488,7 @@ h1, h2,
   }
 
   .contact-card {
-    order: 3;
+    order: 4;
     width: max-content;
     max-width: 100%;
     align-self: start;
@@ -2502,16 +2522,17 @@ h1, h2,
   }
 }
 .footer-cta-group {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 12px !important;
-  width: 100% !important;
-  margin-top: 8px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  margin-top: 22px;
+  padding: 0 var(--hero-pad-x);
 }
 
 .footer-cta-group .cta-button {
-  position: static !important;
-  margin: 0 !important;
+  position: static;
+  margin: 0;
 }
