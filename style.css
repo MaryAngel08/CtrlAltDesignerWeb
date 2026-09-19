@@ -1300,10 +1300,11 @@ h1, h2,
   align-self: stretch;
   width: min(100%, 560px);
   min-height: 0;
-  overflow: hidden;
-  border-radius: 20px;
+  overflow: visible;
+  border-radius: 0;
   pointer-events: none;
   margin-left: -4%;
+  transform: scale(1.05);
 }
 
 .about-figure::before {
@@ -1327,12 +1328,15 @@ h1, h2,
   width: 100%;
   height: 100%;
   margin: 0;
-  border-radius: 20px;
-  object-fit: cover;
-  object-position: center bottom;
+  border-radius: 0;
+  object-fit: contain;
+  object-position: center center;
+  align-items:center;
   -webkit-mask-image: none;
   mask-image: none;
+  transform: scaleX(-1);
 }
+
 
 .process-head {
   max-width: 640px;
