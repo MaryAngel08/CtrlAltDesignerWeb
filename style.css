@@ -2501,4 +2501,17 @@ h1, h2,
     font-size: 0.82rem;
   }
 }
+.footer-cta-group {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  width: 100% !important;
+  margin-top: 8px !important;
+}
 
+.footer-cta-group .cta-button {
+  position: static !important;
+  margin: 0 !important;
+}
