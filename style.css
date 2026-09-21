@@ -963,9 +963,13 @@ h1, h2,
 .project-soon-slot {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   min-height: 1.7rem;
   margin-top: 8px;
+}
+
+#work .project-soon-slot {
+  gap: 12px;
 }
 
 .project-card h3 {
