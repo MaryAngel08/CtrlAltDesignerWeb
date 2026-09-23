@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css?v=2" />
+<link rel="stylesheet" href="style.css?v=44" />
 </head>
 <body>
 
@@ -47,6 +47,8 @@
     </div>
   </div>
 </header>
+
+<div class="scroll-progress" aria-hidden="true"></div>
 
 <main id="top">
 
@@ -135,6 +137,7 @@
   <div class="hero-continue-glow hero-continue-glow--bl" aria-hidden="true"></div>
   <div class="hero-continue-glow hero-continue-glow--contact" aria-hidden="true"></div>
 
+  <div class="circuit-span">
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
       <span class="item">Web Design</span><span class="sep">/</span>
@@ -151,6 +154,19 @@
   </div>
 
 <section class="band" id="services">
+  <div class="circuit-bg" aria-hidden="true">
+    <svg viewBox="0 0 1040 900" preserveAspectRatio="none">
+      <path d="M0,36 L200,36 L240,70 L500,70 L540,36 L1040,36"/>
+      <path d="M0,320 L180,320 L220,280 L460,280 L500,320 L1040,320"/>
+      <path d="M520,0 L520,781"/>
+      <path d="M0,560 L160,560 L210,520 L520,520 L830,520 L880,560 L1040,560"/>
+      <path d="M0,810 L220,810 L280,770 L520,770 L760,770 L820,810 L1040,810"/>
+      <path class="pulse" d="M0,36 L200,36 L240,70 L500,70 L540,36 L1040,36"/>
+      <path class="pulse p2" d="M0,320 L180,320 L220,280 L460,280 L500,320 L1040,320"/>
+      <path class="pulse p3" d="M0,560 L160,560 L210,520 L520,520 L830,520 L880,560 L1040,560"/>
+      <path class="pulse p4" d="M0,810 L220,810 L280,770 L520,770 L760,770 L820,810 L1040,810"/>
+    </svg>
+  </div>
   <div class="wrap">
     <div class="services-intro reveal">
       <p class="label">Services</p>
@@ -224,6 +240,7 @@
     </div>
   </div>
 </section>
+  </div>
 
 <section class="band" id="about">
   <div class="wrap about-layout">
@@ -237,8 +254,20 @@
         <p>I'm Mary, a website designer who builds with intention. I design every site myself, from the first layout to a live URL, using Cursor, Webflow, and Framer. Each one is built to hold together from a small phone screen to a wide desktop display, with a clear hierarchy and restrained motion.</p>
       </div>
     </div>
-    <div class="about-figure">
-      <img src="assets/about-mary-v3.png" alt="" />
+    <div class="about-visual">
+      <div class="about-glow" aria-hidden="true"></div>
+      <svg class="about-rings" viewBox="0 0 400 400" aria-hidden="true">
+        <g class="about-ring about-ring--outer">
+          <circle cx="200" cy="200" r="190" />
+        </g>
+        <g class="about-ring about-ring--mid">
+          <circle cx="200" cy="200" r="140" />
+        </g>
+        <g class="about-ring about-ring--inner">
+          <circle cx="200" cy="200" r="90" />
+        </g>
+      </svg>
+      <img class="about-character" src="assets/about-mary-v3.png" alt="" />
     </div>
   </div>
 </section>
