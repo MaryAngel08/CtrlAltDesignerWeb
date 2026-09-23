@@ -804,7 +804,7 @@ h1, h2,
   width: max-content;
   white-space: nowrap;
   will-change: transform;
-  animation: marquee-scroll 20s linear infinite;
+  animation: marquee-scroll 32s linear infinite;
 }
 
 .marquee-track .item {

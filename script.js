@@ -78,7 +78,7 @@ if (motionOk.matches) {
         anim.playbackRate = rate;
       });
     } else {
-      marqueeTrack.style.animationDuration = `${20 / Math.max(0.001, Math.abs(rate))}s`;
+      marqueeTrack.style.animationDuration = `${32 / Math.max(0.001, Math.abs(rate))}s`;
       marqueeTrack.style.animationDirection = rate < 0 ? "reverse" : "normal";
     }
   };
