@@ -1184,6 +1184,11 @@ h1, h2,
   vector-effect: non-scaling-stroke;
 }
 
+#services .circuit-bg path.circuit-spine {
+  stroke: rgb(167 139 250 / 0.12);
+  stroke-width: 1.05;
+}
+
 #services .circuit-bg path.pulse {
   stroke: rgb(196 181 253 / 0.55);
   stroke-width: 1.35;
@@ -2246,7 +2251,7 @@ h1, h2,
 .footer-copy-bar {
   padding: 18px var(--hero-pad-x) 22px;
   background-color: transparent;
-  border-top: none;
+  border-top: 1px solid rgb(196 181 253 / 0.16);
 }
 
 .footer-top {
@@ -2846,6 +2851,23 @@ h1, h2,
     padding: 28px 0;
   }
 
+  .hero {
+    height: 78vh;
+    height: 78dvh;
+  }
+
+  .hero-portrait {
+    object-fit: cover;
+    object-position: center 20%;
+    width: 78%;
+    height: 78%;
+    top: 14%;
+    left: 11%;
+    right: auto;
+    bottom: auto;
+    inset: auto;
+  }
+
   .hero-ui {
     padding: calc(var(--header-h) + 8px) var(--hero-pad-x) 28px;
   }
@@ -2903,9 +2925,9 @@ h1, h2,
     position: relative;
     inset: auto;
     width: 100%;
-    height: 50vh;
-    height: 50dvh;
-    max-height: 50dvh;
+    height: 38vh;
+    height: 38dvh;
+    max-height: 38dvh;
     flex-shrink: 0;
   }
 
