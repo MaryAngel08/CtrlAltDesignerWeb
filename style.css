@@ -1489,7 +1489,7 @@ h1, h2,
 
 .about-rings circle {
   fill: none;
-  stroke: rgb(139 92 246 / 0.2);
+  stroke: rgb(139 92 246 / 0.42);
   stroke-width: 1;
   vector-effect: non-scaling-stroke;
 }
